@@ -28,9 +28,9 @@ async def Run_Mission():
     await Turn(-real_turn)
 
     if not robot_state.enabled_missions[6]:
-        await Arc(-75, -90)
-        await Arc(75, -90)
-        await multitask(Straight(-20, Stop.BRAKE), Change_Gear(4))
+        await Arc(-80, -90)
+        await Arc(80, -90)
+        await multitask(Straight(-15, Stop.BRAKE), Change_Gear(4))
         # 10 : το Ρομπότ κατεβάζει το scale και πέρνει το artifact
         await Move_Caliper("right", 1000, 1200, 220)
         await Move_Caliper("left", 1000, 1200, 200)

@@ -12,7 +12,7 @@ async def Run_Mission():
     Game_Part_Timer.reset()
     await Reset_Wheels_To_Wall("backward")
     await multitask(Arc(-280, 20), Change_Gear(1))
-    await Straight(420, Stop.BRAKE)
+    await multitask(Straight(420, Stop.BRAKE), Move_Caliper("left", 2000, 120, 200))
     await Move_Caliper("left", 2000, 400, 200)
     # 09 :  Το ρομπότ σηκώνει το σκεπή
     await Straight(-70, Stop.BRAKE)

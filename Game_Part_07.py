@@ -19,6 +19,9 @@ async def Run_Mission():
     await Change_Gear(1)
     # 06 : Το ρομπότ μαζέυει τις πέτρες
     await Move_Caliper("left", 3000, 500, 200)
+    await Change_Gear(2)
+    await Move_Caliper("right", 1000, 100, 150)
+    await Move_Caliper("left", 1000, 180, 180)
     await Change_Gear(3)
     # 05 : Το ρομπότ αποκαλύφτει το κρυφό μέρος
     await Move_Caliper("right", 750, 750, 200)
