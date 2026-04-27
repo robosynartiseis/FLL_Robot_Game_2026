@@ -49,12 +49,11 @@ We transformed the field into a **virtual chessboard**.
 ✔ Self-correction using checkpoints  
 ✔ No drift-based navigation only
 
-```markdown
 ## 🧭 System Architecture
 
 Below is a simplified view of our system:
 
-```mermaid
+```mermaid  
 graph TD
 
     A[Main] --> B[Setup]
@@ -83,8 +82,44 @@ graph TD
     F --> F1[Game_Part_01]
     F --> F2[Game_Part_02]
     F --> F3[...]
+```
+  
+## 🚦Execution Flow  
+  
+This diagram shows how the robot operates during a run:
 
-----------
+```mermaid  
+flowchart TD  
+  
+A[Start Robot] --> B[Initialise Hub]  
+B --> C[Check Battery]  
+C --> D[Select Mission]  
+  
+D --> E[Check IMU]  
+E -->|OK| F[Start Game Timer]  
+E -->|Fail| Z[Stop]  
+  
+F --> G[Change Gear]  
+G --> H[Wait For Start Button]  
+  
+H --> I[Initialise Speed & Acceleration]  
+I --> J[Run Mission]  
+  
+J --> K[Movement Utils]  
+K --> L[GridNavigator Update]  
+  
+L --> M{Checkpoint Detected?}  
+M -->|Yes| N[Correct Position]  
+M -->|No| O[Continue]  
+  
+N --> O  
+O --> P{Next Mission?}  
+  
+P -->|Yes| G  
+P -->|No| Q[End Run]  
+  
+Q --> R[Show Total Time]
+```
 
 # ⚙️ Architecture
 
@@ -271,4 +306,4 @@ Engineering meets strategy.
 ✔ Experimental localization system
 
 ----------
-
+    
