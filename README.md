@@ -49,6 +49,40 @@ We transformed the field into a **virtual chessboard**.
 ✔ Self-correction using checkpoints  
 ✔ No drift-based navigation only
 
+```markdown
+## 🧭 System Architecture
+
+Below is a simplified view of our system:
+
+```mermaid
+graph TD
+
+    A[Main] --> B[Setup]
+    A --> C[RobotState]
+    A --> D[Utils]
+    A --> E[GridNavigator]
+    A --> F[Game Parts]
+
+    B --> B1[Motors]
+    B --> B2[Sensors]
+    B --> B3[DriveBase]
+
+    C --> C1[Debug Modes]
+    C --> C2[Mission Control]
+    C --> C3[Error Tracking]
+
+    D --> D1[Straight]
+    D --> D2[Turn]
+    D --> D3[Arc]
+    D --> D4[Reset To Wall]
+
+    E --> E1[Grid Mapping]
+    E --> E2[Checkpoints]
+    E --> E3[Position Tracking]
+
+    F --> F1[Game_Part_01]
+    F --> F2[Game_Part_02]
+    F --> F3[...]
 
 ----------
 
