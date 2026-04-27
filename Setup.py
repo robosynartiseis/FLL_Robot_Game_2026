@@ -87,7 +87,7 @@ drive_base = DriveBase(left_wheel, right_wheel, 49.5, 160)
 # από εδώ κεντρικά, επηρεάζοντας όλο το πρόγραμμα.
 robot_state = RobotState(
     main_debug=True,
-    track_debug=False,
+    track_debug=True,
     game_part_debug=True,
     utils_debug=True
 )
