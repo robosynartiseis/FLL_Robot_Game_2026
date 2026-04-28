@@ -1,4 +1,4 @@
-# 🚀 ROBO +isis
+# 🚀 Robo+ART(ήσεις)
 
 ### MONA — Unearthing Innovation
 
