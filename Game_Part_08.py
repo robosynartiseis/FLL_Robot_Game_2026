@@ -27,7 +27,7 @@ async def Run_Mission():
     await Turn(90)
     await Straight(75, Stop.BRAKE)
 
-    if not robot_state.enabled_missions[10]:
+    if not robot_state.enabled_missions[12]:
         # 08 :  Το ρομπότ χτυπάει το σιλό 4 φορές και βγάζει τα γρανάζια
         await Move_Caliper("right", 3000, 7000, 200)
     else:

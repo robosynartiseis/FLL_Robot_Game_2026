@@ -14,13 +14,13 @@ async def Run_Mission():
     await Straight(30, Stop.BRAKE)
     await Arc(-80, 55)
     await multitask(Straight(450, Stop.BRAKE), Move_Caliper("left", 500, 200, 150))
-    await Arc(870, 35)
+    await Arc(830, 36)
     # 14.2 : Το ρομπότ αφείνει τα άλλα μισά artifacts
     await Straight(-140, Stop.BRAKE)
     await Turn(45)
     # 15 : Το ρομπότ παραδήδει την τελευταία σημαία
-    await Arc(860, angle=25)
-    await multitask(Arc(-460, angle=25), Change_Gear(2))
+    await Arc(880, angle=25)
+    await multitask(Arc(-480, angle=25), Change_Gear(2))
     await Move_Caliper("right", 600, 500, 120)
     
     if robot_state.enabled_missions[10]:
