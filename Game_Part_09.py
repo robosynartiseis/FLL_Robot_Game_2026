@@ -27,6 +27,8 @@ async def Run_Mission():
         await Move_Caliper("left", 600, 5, 120)
         await Change_Gear(1)
         await Move_Caliper("right", 650, 550, 200)
+        drive_base.settings(straight_speed=375)
+        drive_base.settings(straight_acceleration=750)
         await Straight(-80, Stop.BRAKE)
         drive_base.settings(turn_rate=250)
         drive_base.settings(turn_acceleration=375)
@@ -36,7 +38,7 @@ async def Run_Mission():
         await Move_Caliper("left", 1000, 10, 170)
         # 14.3 : Το ρομπότ αφείνει τον explorer
         await Change_Gear(1)
-        await Move_Caliper("left", 500, 650, 200)
+        await Move_Caliper("left", 500, 650, 250)
     else:
         await Straight(-70, Stop.COAST)
 

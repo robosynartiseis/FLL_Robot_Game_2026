@@ -21,7 +21,7 @@ async def Run_Mission():
         #await multitask(Arc(800, 5), Change_Gear(3))
         await multitask(Straight(75, Stop.BRAKE), Change_Gear(3))
     else:
-        await Arc(275, 34)
+        await Arc(280, 34)
         await Arc(-270, 33)
         await Straight(155, Stop.BRAKE)
         drive_base.settings(straight_speed=200)

@@ -14,9 +14,9 @@ async def Run_Mission():
     await Straight(78, Stop.BRAKE)
     await multitask(Arc(-80, 55), Change_Gear(4))
     await multitask(Straight(610, Stop.BRAKE), Move_Caliper("right", 1000, 1400, 200))
-    await Arc(50, -100)
+    await Arc(55, -100)
     # 10 : το Ρομπότ κατεβάζει το scale και πέρνει το artifact
-    await Move_Caliper("right", 1100, 1200, 250)
+    await Move_Caliper("right", 1100, 1200, 250, False)
     await Move_Caliper("left", 1000, 1400, 200)
     await Change_Gear(3)
     await Move_Caliper("left", 500, 200, 120)
